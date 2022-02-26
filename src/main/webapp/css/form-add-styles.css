@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+
+.heading-wrapper {
+	width: 100%;
+	position:relative;
+}
+
+.heading {
+	font-size: 30px;
+	font-weight: 700;
+	font-family: serif, sans-serif;
+	text-align: center;
+	text-transform: capitalize;
+	padding: 12px 0;
+	box-sizing: border-box;	
+}
+
+.line {
+	width: 1rem;
+	height: 2rem;
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	right:35.7rem;
+	bottom:1.4rem;
+	
+
+}

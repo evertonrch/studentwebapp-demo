@@ -29,7 +29,7 @@
 						</div>
 			
 						<div class="col-10">
-							<input id="in-hidden" type="text" class="form-control" value="ADD" readonly>				
+							<input type="text" name="command" value="ADD" class="form-control">				
 						</div>
 				</div>
 				<div class="row mb-3">

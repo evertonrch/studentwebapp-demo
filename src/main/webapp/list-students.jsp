@@ -17,12 +17,12 @@
 	<main>
 		<div class="container">
 			<div class="line-separator d-flex align-items-center">
-				<button 
-					type="submit"
-					onclick="window.location.href='${linkForAdd}; return false'"
-					class="btn btn-secondary btn-sm btn-add btn-sm"
-				>Add Student</button>
-<%-- 				<a href="${linkForAdd}" class="btn-add btn btn-secondary btn-sm">Add Student</a> --%>
+<!-- 				<button  -->
+<!-- 					type="submit" -->
+<%-- 					onclick="window.location.href='${linkForAdd}; return false'" --%>
+<!-- 					class="btn btn-secondary btn-sm btn-add btn-sm" -->
+<!-- 				>Add Student</button> -->
+				<a href="${linkForAdd}" class="btn-add btn btn-secondary btn-sm">Add Student</a>
 			</div>
 			<table class="table table-striped table-borderless table-hover">
 				<thead>

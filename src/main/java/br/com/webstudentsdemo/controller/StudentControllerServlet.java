@@ -1,4 +1,4 @@
-package br.com.webstudentdemo.controllers;
+package br.com.webstudentsdemo.controller;
 
 import java.io.IOException;
 import java.util.List;

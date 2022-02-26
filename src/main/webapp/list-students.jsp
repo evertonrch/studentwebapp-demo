@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.List" %>
-<%@ page import="br.com.webstudentsdemo.models.Student"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -12,10 +11,6 @@
 <title>List Students</title>
 </head>
 <body>
-	<%
-		List<Student> students = (List<Student>) request.getAttribute("student_list");
-	%>
-	
 	<nav>
 		<div class="container">
 			<header>
@@ -35,18 +30,14 @@
 					<th class="text-center table-primary tb-heading-align">Email</th>
 				</thead>
 				<tbody>
-					<%
-						for(Student st : students) {					
-					%>
+					<c:forEach var="student" items="${student_list}">
 						<tr>
-							<td class="text-center"><%= st.getId() %></td>
-							<td class="text-center"><%= st.getName() %></td>
-							<td class="text-center"><%= st.getLastName() %></td>
-							<td class="text-center"><%= st.getEmail() %></td>
+							<td class="text-center">${student.getId()}</td>
+							<td class="text-center">${student.getName()}</td>
+							<td class="text-center">${student.getLastName()}</td>
+							<td class="text-center">${student.getEmail()}</td>
 						</tr>
-					<%
-						}					
-					%>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>

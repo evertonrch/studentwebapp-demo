@@ -40,6 +40,27 @@ public class StudentDataUtil {
 		}
 		return students;
 	}
-	
 
+	public void addStudent(Student st) throws SQLException {
+		String query = "INSERT INTO student(first_name, last_name, email) VALUES (?, ?, ?)";
+		
+		Connection conn = null;
+		PreparedStatement pst = null;
+		try {
+			conn = dataSource.getConnection();
+			pst = conn.prepareStatement(query);
+			pst.setString(1, st.getName());
+			pst.setString(2, st.getLastName());
+			pst.setString(3, st.getEmail());
+			pst.execute();
+		}
+		finally {
+			if(pst != null) {
+				pst.close();
+			}
+			if(conn != null) {
+				conn.close();
+			}
+		}		
+	}
 }

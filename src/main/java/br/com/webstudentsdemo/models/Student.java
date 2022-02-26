@@ -7,6 +7,8 @@ public class Student {
 	private String lastName;
 	private String email;
 	
+	public Student() {}
+	
 	public Student(String name, String lastName, String emal) {
 		setName(name);
 		setLastName(lastName);
@@ -57,8 +59,5 @@ public class Student {
 		return "Student [Id()=" + getId() + ", Name()=" + getName() + ", LastName()=" + getLastName()
 				+ ", Email()=" + getEmail() + "]";
 	}
-	
-	
-	
 	
 }

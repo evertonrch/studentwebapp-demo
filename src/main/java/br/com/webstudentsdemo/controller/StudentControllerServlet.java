@@ -26,7 +26,7 @@ public class StudentControllerServlet extends HttpServlet {
 	private DataSource dataSource;
 
 	
-	public void init() throws ServletException {		
+	public void init() throws ServletException {
 		try {
 			studentDataUtil = new StudentDataUtil(dataSource);			
 		}
@@ -37,12 +37,45 @@ public class StudentControllerServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			listStudents(request, response);
+		try {			
+			String paramCommand = request.getParameter("command");
+			
+			if(paramCommand == null) {
+				paramCommand = "LIST";
+			}
+			
+			switch(paramCommand) {				
+			case "LIST":
+				listStudents(request, response);
+				break;
+			
+			case "ADD":
+				addStudent(request, response);
+				break;
+			
+			default:
+				listStudents(request, response);
+			}
 		}
 		catch(Exception e) {
 			throw new ServletException(e);
 		}
+	}
+
+	private void addStudent(HttpServletRequest request, HttpServletResponse response)
+		throws Exception {
+		String paramFirstName = request.getParameter("firstName");
+		String paramLastName = request.getParameter("lastName");
+		String paramEmail = request.getParameter("email");
+				
+		Student st = new Student();
+		st.setName(paramFirstName);
+		st.setLastName(paramLastName);
+		st.setEmail(paramEmail);
+		
+		studentDataUtil.addStudent(st);
+				
+		listStudents(request, response);		
 	}
 
 

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:url value="/form-add-student.jsp" var="linkForAdd"/>
 
 <!DOCTYPE html>
 <html>
@@ -11,17 +12,18 @@
 <title>List Students</title>
 </head>
 <body>
-	<nav>
-		<div class="container">
-			<header>
-				<h2>FooBar University</h2>
-			</header>
-		</div>
-	</nav>
+	<jsp:include page="heading.jsp"></jsp:include>
 	
 	<main>
 		<div class="container">
-			<div class="line-separator"></div>
+			<div class="line-separator d-flex align-items-center">
+				<button 
+					type="submit"
+					onclick="window.location.href='${linkForAdd}; return false'"
+					class="btn btn-secondary btn-sm btn-add btn-sm"
+				>Add Student</button>
+<%-- 				<a href="${linkForAdd}" class="btn-add btn btn-secondary btn-sm">Add Student</a> --%>
+			</div>
 			<table class="table table-striped table-borderless table-hover">
 				<thead>
 					<th class="text-center table-primary tb-heading-align">#</th>

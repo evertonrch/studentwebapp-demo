@@ -8,6 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
 <title>List Students</title>
 </head>
 <body>
@@ -23,24 +24,25 @@
 		</div>
 	</nav>
 	
-	<div class="line-separator" style="height: 6px; background-color: black"></div>
-	
 	<main>
 		<div class="container">
-			<table class="table table-striped mt-3">
+			<div class="line-separator"></div>
+			<table class="table table-striped table-borderless table-hover">
 				<thead>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Email</th>
+					<th class="text-center table-primary tb-heading-align">#</th>
+					<th class="text-center table-primary tb-heading-align">First Name</th>
+					<th class="text-center table-primary tb-heading-align">Last Name</th>
+					<th class="text-center table-primary tb-heading-align">Email</th>
 				</thead>
 				<tbody>
 					<%
 						for(Student st : students) {					
 					%>
 						<tr>
-							<td><%= st.getName() %></td>
-							<td><%= st.getLastName() %></td>
-							<td><%= st.getEmail() %></td>
+							<td class="text-center"><%= st.getId() %></td>
+							<td class="text-center"><%= st.getName() %></td>
+							<td class="text-center"><%= st.getLastName() %></td>
+							<td class="text-center"><%= st.getEmail() %></td>
 						</tr>
 					<%
 						}					

@@ -1,0 +1,14 @@
+@charset "ISO-8859-1";
+
+header{
+	background-color: #0977e6;
+	height: 5rem;
+	display: flex;
+	align-items: center;
+}
+
+h2 {
+	margin-left: 2rem;
+	font-weight: 900;
+	color: #fff;
+}

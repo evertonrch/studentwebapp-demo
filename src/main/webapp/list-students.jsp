@@ -41,15 +41,25 @@
 						<c:param name="studentId" value="${student.getId()}"></c:param>
 					</c:url>
 					
+					<c:url var="deleteLink" value="/student-controller">
+						<c:param name="command" value="DELETE"></c:param>
+						<c:param name="studentId" value="${student.getId()}"></c:param>
+					</c:url>
+					
 						<tr>
 							<td class="text-center">${student.getId()}</td>
 							<td class="text-center">${student.getName()}</td>
 							<td class="text-center">${student.getLastName()}</td>
 							<td class="text-center">${student.getEmail()}</td>
-							<td>
+							<td class="text-center">
 								<a class="btn btn-warning btn-sm" 
 									href="${tempLink}">
 									<i class="fa-solid fa-pen-to-square"></i>
+								</a>
+								<a class="btn btn-danger btn-sm" 
+									href="${deleteLink}"
+									onclick="if(!(confirm('Are you sure you want to delete this student?'))) return false;">
+									<i class="fa-solid fa-trash-can"></i>
 								</a>
 							</td>
 						</tr>

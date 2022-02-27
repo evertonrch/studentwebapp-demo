@@ -73,7 +73,7 @@
 				</div>
 				<div class="row">
 					<div class="col d-flex justify-content-end gap-2">
-						<button type="submit" class="btn btn-success btn-sm">Add Student</button>
+						<button type="submit" class="btn btn-success btn-sm">Update Student</button>
 					</div>
 				</div>
 			</div>

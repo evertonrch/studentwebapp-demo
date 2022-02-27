@@ -89,4 +89,18 @@ public class StudentDataUtil {
 		}
 		return student;
 	}
+
+	public void updateStudent(Student student) throws SQLException {
+		
+		String query = "UPDATE student SET first_name = ?, last_name = ?, email = ? " +
+					   "WHERE id = ? ";
+		try(Connection conn = dataSource.getConnection();
+			PreparedStatement pst = conn.prepareStatement(query)){
+			pst.setString(1, student.getName());
+			pst.setString(2, student.getLastName());
+			pst.setString(3, student.getEmail());
+			pst.setInt(4, student.getId());
+			pst.execute();
+		}		
+	}
 }

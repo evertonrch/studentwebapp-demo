@@ -58,7 +58,7 @@
 								</a>
 								<a class="btn btn-danger btn-sm" 
 									href="${deleteLink}"
-									onclick="if(!(confirm('Are you sure you want to delete this student?'))) return false;">
+									onclick="if(!(confirm('Are you sure you want to delete this student?'))) return false">
 									<i class="fa-solid fa-trash-can"></i>
 								</a>
 							</td>

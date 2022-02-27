@@ -103,4 +103,15 @@ public class StudentDataUtil {
 			pst.execute();
 		}		
 	}
+
+	public void deleteStudent(String id) throws SQLException {
+		int studentId = Integer.parseInt(id);
+		String query = "DELETE FROM student WHERE id = ?";
+		
+		try(Connection conn = dataSource.getConnection();
+			PreparedStatement pst = conn.prepareStatement(query)){
+			pst.setInt(1, studentId);
+			pst.execute();
+		}		
+	}
 }

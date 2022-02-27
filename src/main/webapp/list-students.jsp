@@ -8,6 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link href="css/styles.css" rel="stylesheet">
 <title>List Students</title>
 </head>
@@ -26,18 +27,31 @@
 			</div>
 			<table class="table table-striped table-borderless table-hover">
 				<thead>
-					<th class="text-center table-primary tb-heading-align">#</th>
-					<th class="text-center table-primary tb-heading-align">First Name</th>
-					<th class="text-center table-primary tb-heading-align">Last Name</th>
-					<th class="text-center table-primary tb-heading-align">Email</th>
+					<th class="text-center table-primary text-white bg-primary">#</th>
+					<th class="text-center table-primary text-white bg-primary">First Name</th>
+					<th class="text-center table-primary text-white bg-primary">Last Name</th>
+					<th class="text-center table-primary text-white bg-primary">Email</th>
+					<th class="text-center table-primary text-white bg-primary">Action</th>
 				</thead>
 				<tbody>
 					<c:forEach var="student" items="${student_list}">
+					
+					<c:url var="tempLink" value="/student-controller">
+						<c:param name="command" value="LOAD"></c:param>
+						<c:param name="studentId" value="${student.getId()}"></c:param>
+					</c:url>
+					
 						<tr>
 							<td class="text-center">${student.getId()}</td>
 							<td class="text-center">${student.getName()}</td>
 							<td class="text-center">${student.getLastName()}</td>
 							<td class="text-center">${student.getEmail()}</td>
+							<td>
+								<a class="btn btn-warning btn-sm" 
+									href="${tempLink}">
+									<i class="fa-solid fa-pen-to-square"></i>
+								</a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

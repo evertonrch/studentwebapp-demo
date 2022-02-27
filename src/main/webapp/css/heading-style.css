@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 
-header{
+nav {
 	background-color: #0977e6;
 	height: 5rem;
 	display: flex;

@@ -9,12 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<nav>
-		<div class="container">
-			<header>
+	<header class="container">
+		<nav>
 				<h2>FooBar University</h2>
-			</header>
-		</div>
-	</nav>
+		</nav>
+	</header>
 </body>
 </html>

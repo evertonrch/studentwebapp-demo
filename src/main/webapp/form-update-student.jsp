@@ -24,21 +24,21 @@
 		<form action="${linkForController}" method="GET" class="w-50 mx-auto mt-4">
 			<div class="container">
 				<div class="row mb-3">
-						<div class="col-2">
-							<label>Command:</label>
-						</div>
+<!-- 						<div class="col-2"> -->
+<!-- 							<label>Command:</label> -->
+<!-- 						</div> -->
 			
 						<div class="col-10">
-							<input type="text" name="command" value="UPDATE" class="form-control">				
+							<input type="hidden" name="command" value="UPDATE" class="form-control">				
 						</div>
 				</div>
 				<div class="row mb-3">
-						<div class="col-2">
-							<label>Id:</label>
-						</div>
+<!-- 						<div class="col-2"> -->
+<!-- 							<label>Id:</label> -->
+<!-- 						</div> -->
 			
 						<div class="col-10">
-							<input type="text" name="studentId" value="${STUDENT.getId()}" class="form-control">				
+							<input type="hidden" name="studentId" value="${STUDENT.getId()}" class="form-control">				
 						</div>
 				</div>
 				<div class="row mb-3">

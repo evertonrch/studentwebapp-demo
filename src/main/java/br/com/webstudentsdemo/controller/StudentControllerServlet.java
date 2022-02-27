@@ -124,7 +124,8 @@ public class StudentControllerServlet extends HttpServlet {
 		
 		studentDataUtil.addStudent(st);
 				
-		listStudents(request, response);		
+		response.sendRedirect("list-students.jsp");
+//		listStudents(request, response);		
 	}
 
 
